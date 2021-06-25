@@ -1,0 +1,54 @@
+{% extends './base.html' %} {% block patient %}
+<h1>Update Record</h1>
+<div class="container">
+  <div class="form-group">
+    <form method="POST" class="row g-3">
+      {% csrf_token %}
+      <div class="col-12 col-md-6">
+        {{form.first_name.errors}}
+        <label for="{{ form.first_name.id_for_label}}">First Name:</label>
+        {{form.first_name}}
+      </div>
+      <div class="col-12 col-md-6">
+        {{form.last_name.errors}}
+        <label for="{{ form.last_name.id_for_label}}">Last Name:</label>
+        {{form.last_name}}
+      </div>
+      <div class="col-12 col-md-6">
+        {{form.gender.errors}}
+        <label for="{{ form.gender.id_for_label}}">Gender:</label>
+        {{form.gender}}
+      </div>
+      <div class="col-12 col-md-6">
+        {{form.age.errors}}
+        <label for="{{ form.age.id_for_label}}">Age (Years):</label>
+        {{form.age}}
+      </div>
+      <div class="col-12">
+        {{form.disease.errors}}
+        <label for="{{ form.disease.id_for_label}}">Disease (Problem):</label>
+        {{form.disease}}
+      </div>
+      <div class="col-12 col-md-6">
+        {{form.doctor_name.errors}}
+        <label for="{{ form.doctor_name.id_for_label}}">Doctor's Name:</label>
+        {{form.doctor_name}}
+      </div>
+      <div class="col-12 col-md-3">
+        {{form.doctor_fees.errors}}
+        <label for="{{ form.doctor_fees.id_for_label}}">Fees:</label>
+        {{form.doctor_fees}}
+      </div>
+      <div class="col-12 col-md-3">
+        {{form.meds_started.errors}}
+        <label for="{{ form.meds_started.id_for_label}}"
+          >Meds Start Date:</label
+        >
+        {{form.meds_started}}
+      </div>
+      <a class="col-5 cancel" href="/all">Cancel</a>
+      <input class="col-5 primary" type="submit" value="Update" />
+    </form>
+  </div>
+</div>
+{% endblock patient %}

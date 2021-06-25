@@ -1,0 +1,58 @@
+{% extends './base.html' %} {% block patient %}
+<h1>Delete Record</h1>
+<div class="container">
+  <div class="form-group">
+    <form method="post" class="row g-3">
+      {% csrf_token %}
+      <p class="question">
+        Are you sure you want to delete record "#{{ object.id }}" created on
+        {{object.created |date:"d N Y"}}?
+      </p>
+      <div class="col-12 col-md-6">
+        {{object.first_name.errors}}
+        <span>First Name:</span>
+        <p>{{object.first_name}}</p>
+      </div>
+      <div class="col-12 col-md-6">
+        {{object.last_name.errors}}
+        <span>Last Name:</span>
+        <p>{{object.last_name}}</p>
+      </div>
+      <div class="col-12 col-md-6">
+        {{object.gender.errors}}
+        <span>Gender:</span>
+        <p>{{object.gender}}</p>
+      </div>
+      <div class="col-12 col-md-6">
+        {{object.age.errors}}
+        <span>Age (Years):</span>
+        <p>{{object.age}}</p>
+      </div>
+      <div class="col-12">
+        {{object.disease.errors}}
+        <span>Disease (Problem):</span>
+        <p>{{object.disease}}</p>
+      </div>
+      <div class="col-12 col-md-6">
+        {{object.doctor_name.errors}}
+        <span>Doctor's Name:</span>
+        <p>{{object.doctor_name}}</p>
+      </div>
+      <div class="col-12 col-md-3">
+        {{object.doctor_fees.errors}}
+        <span>Fees:</span>
+        <p>{{object.doctor_fees}}</p>
+      </div>
+      <div class="col-12 col-md-3">
+        {{object.meds_started.errors}}
+        <span>Meds Start Date:</span>
+        <p>{{object.meds_started}}</p>
+      </div>
+      <a class="col-5 primary" href="/all"
+        ><i class="fas fa-arrow-left"></i> Go Back</a
+      >
+      <input class="col-5 danger" type="submit" value="Delete" class="danger" />
+    </form>
+  </div>
+</div>
+{% endblock patient %}

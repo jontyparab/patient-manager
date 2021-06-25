@@ -1,0 +1,49 @@
+{% extends './base.html' %} {% block patient %}
+<h1>All Records</h1>
+<div class="container">
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col sticky">Record #</th>
+          <th scope="col sticky">Patient's Name</th>
+          <th scope="col sticky">Gender</th>
+          <th scope="col sticky">Age (years)</th>
+          <th scope="col sticky">Doctor's Name</th>
+          <th scope="col sticky">Fees</th>
+          <th scope="col sticky">Meds Start</th>
+          <th scope="colgroup sticky" colspan="2">Manage</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for record in object_list %}
+        <tr class="data">
+          <td class="th">#{{ record.id }}</td>
+          <td>{{ record.first_name }} {{ record.last_name }}</td>
+          <td>{{ record.gender }}</td>
+          <td>{{ record.age}}</td>
+          <td>{{ record.doctor_name}}</td>
+          <td>{{ record.doctor_fees}}</td>
+          <td>{{ record.meds_started}}</td>
+          <td>
+            <a class="danger" href="/delete/{{record.id}}"
+              ><i class="fas fa-times"></i> Delete</a
+            >
+          </td>
+          <td>
+            <a class="primary" href="/update/{{record.id}}"
+              ><i class="fas fa-edit"></i> Update</a
+            >
+          </td>
+        </tr>
+        {% empty %}
+        <div class="display-6">No Records Found.</div>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<a class="add-button" href="/add">
+  <i class="fas fa-plus"></i>
+</a>
+{% endblock patient %}

@@ -11,7 +11,16 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-from local_settings.local_settings import *
+
+from django.contrib.messages import constants as message_constants
+
+try:
+    from local_settings.local_settings import *
+    key = SECRET_KEY
+except:
+    key = '3)h2b9z2&4@u%!z=vs%@6th@1grcgp8wlsbzs7(bie66gclk!+'
+    print('No local settings found, fallback to default settings...')
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY
+SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'recordsManager',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +129,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MESSAGE_TAGS = {message_constants.ERROR: 'danger'}
