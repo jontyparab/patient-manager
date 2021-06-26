@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.contrib import messages
+from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from django.views import View
 
@@ -12,27 +13,30 @@ from .forms import AddPatientForm
 class AddPatient(CreateView):
     model = PatientRecord
     form_class = AddPatientForm
-    # template_name = 'recordsManager/patientrecord_form.html'
+    def get_success_url(self):
+        messages.success(self.request, "New Record Added")
+        return reverse('recordsManager:allrecords')
 
 
 class UpdatePatient(UpdateView):
     model = PatientRecord
     form_class = AddPatientForm
     template_name_suffix = '_update_form'
-    # template_name = 'recordsManager/patientrecord_update_form.html'
+    def get_success_url(self):
+        messages.info(self.request, "Record Updated")
+        return reverse('recordsManager:allrecords')
 
 
 class DeletePatient(DeleteView):
     model = PatientRecord
     form_class = AddPatientForm
-    success_url = reverse_lazy('allrecords')
-    # template_name = 'recordsManager/patientrecord_confirm_delete.html'
-
+    def get_success_url(self):
+        messages.error(self.request, "Record Deleted")
+        return reverse('recordsManager:allrecords')
+    
 
 class AllRecords(ListView):
     model = PatientRecord
-    # paginate_by = 2
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context

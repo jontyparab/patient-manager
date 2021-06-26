@@ -42,11 +42,11 @@
       <div class="col-12 col-md-3">
         {{form.meds_started.errors}}
         <label for="{{ form.meds_started.id_for_label}}"
-          >Meds Start Date:</label
+          >Meds Started On:</label
         >
         {{form.meds_started}}
       </div>
-      <a class="col-5 cancel" href="/all">Cancel</a>
+      <a class="col-5 cancel" href="{% url 'recordsManager:allrecords' %}">Cancel</a>
       <input class="col-5 primary" type="submit" value="Save" />
     </form>
   </div>

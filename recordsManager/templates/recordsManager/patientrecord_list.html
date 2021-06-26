@@ -26,12 +26,16 @@
           <td>{{ record.doctor_fees}}</td>
           <td>{{ record.meds_started}}</td>
           <td>
-            <a class="danger" href="/delete/{{record.id}}"
+            <a
+              class="danger"
+              href="{% url 'recordsManager:delpatient' pk=record.id %}"
               ><i class="fas fa-times"></i> Delete</a
             >
           </td>
           <td>
-            <a class="primary" href="/update/{{record.id}}"
+            <a
+              class="primary"
+              href="{% url 'recordsManager:updpatient' pk=record.id %}"
               ><i class="fas fa-edit"></i> Update</a
             >
           </td>
@@ -43,7 +47,7 @@
     </table>
   </div>
 </div>
-<a class="add-button" href="/add">
+<a class="add-button" href="{% url 'recordsManager:addpatient' %}">
   <i class="fas fa-plus"></i>
 </a>
 {% endblock patient %}

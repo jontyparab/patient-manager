@@ -45,10 +45,10 @@
       </div>
       <div class="col-12 col-md-3">
         {{object.meds_started.errors}}
-        <span>Meds Start Date:</span>
+        <span>Meds Started On:</span>
         <p>{{object.meds_started}}</p>
       </div>
-      <a class="col-5 primary" href="/all"
+      <a class="col-5 primary" href="{% url 'recordsManager:allrecords' %}"
         ><i class="fas fa-arrow-left"></i> Go Back</a
       >
       <input class="col-5 danger" type="submit" value="Delete" class="danger" />

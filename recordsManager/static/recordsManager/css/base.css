@@ -109,6 +109,55 @@ th,td{
 .highlight td{
     background-color: var(--color6);
 }
+.alert{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    height: 2rem;
+    width: auto;
+    padding:0.4rem;
+    border-radius: 0.4rem;
+    font-weight: 700;
+    animation-name: slide-up;
+    animation-duration:3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-direction:alternate;
+    animation-fill-mode: forwards;
+}
+.no-alert{
+    display: none;
+}
+.alert-success{
+    background-color: var(--color17);
+    border-left: solid 0.2rem var(--color4);
+}
+.alert-danger{
+    background-color: var(--color18);
+    border-left: solid 0.2rem var(--color9);
+}
+.alert-info{
+    background-color: var(--color19);
+    border-left: solid 0.2rem var(--color15);
+}
+@keyframes slide-up {
+    0%{
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    25%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    75%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+}
 .add-button{
     position: fixed;
     bottom:1rem;
@@ -129,6 +178,10 @@ th,td{
 span{
     font-weight: 700;
     display: inline-block;
+}
+p{
+   word-break: break-all;
+   text-overflow: ellipsis;
 }
 .question{
     font-weight: 700;
