@@ -1,0 +1,48 @@
+<!-- Common form for both add and update -->
+<div class="col-12 col-md-6 {{ form.first_name.errors|yesno:'invalid, , '}}">
+  <label for="{{ form.first_name.id_for_label}}">First Name:</label>
+  {{form.first_name}}
+  <small>{{form.first_name.errors}}</small>
+</div>
+
+<div class="col-12 col-md-6 {{ form.last_name.errors|yesno:'invalid, , '}}">
+  <label for="{{ form.last_name.id_for_label}}">Last Name:</label>
+  {{form.last_name}}
+  <small>{{form.last_name.errors}}</small>
+</div>
+
+<div class="col-12 col-md-6 {{ form.gender.errors|yesno:'invalid, , '}}">
+  <label for="{{ form.gender.id_for_label}}">Gender:</label>
+  {{form.gender}}
+  <small>{{form.gender.errors}}</small>
+</div>
+
+<div class="col-12 col-md-6 {{ form.age.errors|yesno:'invalid, , '}}">
+  <label for="{{ form.age.id_for_label}}">Age (Years):</label>
+  {{form.age}}
+  <small>{{form.age.errors}}</small>
+</div>
+
+<div class="col-12 {{ form.disease.errors|yesno:'invalid, , '}}">
+  <label for="{{ form.disease.id_for_label}}">Disease (Problem):</label>
+  {{form.disease}}
+  <small>{{form.disease.errors}}</small>
+</div>
+
+<div class="col-12 col-md-6 {{ form.doctor_name.errors|yesno:'invalid, , '}}">
+  <label for="{{ form.doctor_name.id_for_label}}">Doctor's Name:</label>
+  {{form.doctor_name}}
+  <small>{{form.doctor_name.errors}}</small>
+</div>
+
+<div class="col-12 col-md-3 {{ form.doctor_fees.errors|yesno:'invalid, , '}}">
+  <label for="{{ form.doctor_fees.id_for_label}}">Fees:</label>
+  {{form.doctor_fees}}
+  <small>{{form.doctor_fees.errors}}</small>
+</div>
+
+<div class="col-12 col-md-3 {{ form.meds_started.errors|yesno:'invalid, , '}}">
+  <label for="{{ form.meds_started.id_for_label}}">Meds Started On:</label>
+  {{form.meds_started}}
+  <small>{{form.meds_started.errors}}</small>
+</div>

@@ -28,9 +28,18 @@ textarea{
     height: auto;
     resize: vertical;
 }
-label{
-    color: var(--color14);
+ul{
+    color: var(--color9);
     font-weight: 700;
+    list-style-type: none;
+}
+.invalid{
+    border-left: solid 0.2rem var(--color9);
+}
+small{
+    color:var(--color9);
+    text-decoration:none;
+    list-style-type: none;
 }
 @media only screen and (max-width: 1024px) {
     .form-group{

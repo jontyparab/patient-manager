@@ -1,4 +1,5 @@
-{% extends './base.html' %} {% block patient %}
+{% extends './base.html' %}
+{% block patient %}
 <h1>Delete Record</h1>
 <div class="container">
   <div class="form-group">
@@ -51,7 +52,7 @@
       <a class="col-5 primary" href="{% url 'recordsManager:allrecords' %}"
         ><i class="fas fa-arrow-left"></i> Go Back</a
       >
-      <input class="col-5 danger" type="submit" value="Delete" class="danger" />
+      <input class="col-5 danger" type="submit" value="Delete"/>
     </form>
   </div>
 </div>
