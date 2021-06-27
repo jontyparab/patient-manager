@@ -16,7 +16,7 @@ class PatientRecord(models.Model):
     age = models.PositiveSmallIntegerField()
     disease = models.TextField()
     doctor_name = models.CharField(max_length=200)
-    doctor_fees = models.DecimalField(default=500, max_digits=8, decimal_places=2, validators=[MinValueValidator(0.01)])
+    doctor_fees = models.IntegerField(default=500)
     meds_started = models.DateField()
     created = models.DateTimeField(auto_now_add=True)
 
