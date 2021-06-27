@@ -11,9 +11,9 @@ class AddPatientForm(forms.ModelForm):
             'first_name': forms.TextInput(attrs={'class': 'form-control', 'autofocus': 'true'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'gender': forms.Select(attrs={'class': 'form-control'}),
-            'age': forms.NumberInput(attrs={'class': 'form-control'}),
+            'age': forms.NumberInput(attrs={'class': 'form-control', 'step':'1'}),
             'disease': forms.Textarea(attrs={'class': 'form-control'}),
             'doctor_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'doctor_fees': forms.NumberInput(attrs={'class': 'form-control'}),
+            'doctor_fees': forms.NumberInput(attrs={'class': 'form-control', 'step':'1'}),
             'meds_started': forms.DateInput(attrs={'type': 'date', 'class': 'form-control', 'autocapitalize': 'off'}),
         }

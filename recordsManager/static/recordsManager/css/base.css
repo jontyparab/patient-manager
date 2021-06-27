@@ -87,6 +87,7 @@ th{
     background-color: var(--color4);
     color: var(--color11);
     padding: 0.4rem;
+    z-index: 2;
 }
 tr{
     border-bottom: solid 0.1rem var(--color13);
@@ -108,8 +109,26 @@ th,td{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.no-record{
+    font-weight: bold;
+    color: var(--color9);
+}
 .highlight td{
     background-color: var(--color6);
+}
+.data{
+    animation: flow-down 0.3s ease-out;
+    animation-fill-mode: forwards;
+}
+@keyframes flow-down {
+    0%{
+        opacity: 0;
+        transform: translateY(-1rem) scaleX(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0) scaleX(1);
+    }
 }
 /* Mini Alert */
 .alert{
