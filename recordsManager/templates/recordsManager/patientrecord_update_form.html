@@ -5,7 +5,7 @@
     <form method="POST" class="row g-3">
       {% csrf_token %} {% include "./patient-form.html" %}
       <a class="col-5 cancel" href="/all">Cancel</a>
-      <input class="col-5 primary" type="submit" value="Update" />
+      <button class="col-5 primary" type="submit">Update</button>
     </form>
   </div>
 </div>
